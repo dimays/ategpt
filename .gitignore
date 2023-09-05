@@ -1,3 +1,4 @@
 .DS_Store
 dist/
 ategpt_env/
+ategpt.egg-info/
