@@ -1,6 +1,6 @@
 # ATE-GPT: A Lightweight Python Library for Enhanced Thinking
 
-ATEGPT ("Ask, Think, Evaluate" powered by GPT) is a true thought partner, enhancing your thinking with Chain of Thought behavior.
+ATE-GPT ("Ask, Think, Evaluate" powered by GPT) is a true thought partner, enhancing your thinking with Chain of Thought behavior.
 
 This module is intended to be very lightweight, relying only on the openai API and some simple prompt engineering techniques to guide a GPT-based LLM through a comprehensive thought process.
 
@@ -57,13 +57,13 @@ It's easy to use ATE-GPT!
 *Here's a quick overview of how to use ATE-GPT in your Python projects:*
 
 ```python
-import ategpt
+from ategpt.ategpt import ThoughtProcess
 
 # Define your end goal
 goal = "I want to accomplish [your goal here]."
 
 # Create an instance of the ThoughtProcess class
-thought_process = ategpt.ThoughtProcess(goal)
+thought_process = ThoughtProcess(goal)
 
 # Start the thought process
 thought_process.think()
@@ -109,7 +109,7 @@ The behavior of ATE-GPT can be modified to suit the needs of your project. Below
 By default, ATE-GPT look for an environment variable called `OPENAI_API_KEY`. If you choose to manage your API keys in a different way, you may define your API Key when initializing the `ThoughtProcess` object.
 
 ```python
-from ategpt import ThoughtProcess
+from ategpt.ategpt import ThoughtProcess
 
 my_key = 'myApiKey1234'
 
@@ -121,7 +121,7 @@ thought_process = ThoughtProcess(api_key=my_key)
 ATE-GPT supports all `gpt-3.5` and `gpt-4` models from OpenAI. `gpt-4` is the default model used.
 
 ```python
-from ategpt import ThoughtProcess
+from ategpt.ategpt import ThoughtProcess
 
 thought_process = ThoughtProcess(model='gpt-3.5-turbo-16k')
 ```
@@ -131,7 +131,7 @@ thought_process = ThoughtProcess(model='gpt-3.5-turbo-16k')
 By default, ATE-GPT usees a temperature of 0.5 for all completions (except for the `evaluation` step, which uses a temperature of 0, which is recommended for consistent outputs from the `evaluation` step). Temperatures closer to 0 will be less variable, while temperatures closer to 2 can be so variable as to be incomprehensible.
 
 ```python
-from ategpt import ThoughtProcess
+from ategpt.ategpt import ThoughtProcess
 
 thought_process = ThoughtProcess(temp=0.7)
 ```
@@ -141,7 +141,7 @@ thought_process = ThoughtProcess(temp=0.7)
 If you wish to access the intermediate steps, you can reference the `intermediate_steps` attribute of the `ThoughtProcess` object.
 
 ```python
-from ategpt import ThoughtProcess
+from ategpt.ategpt import ThoughtProcess
 
 thought_process = ThoughtProcess(temperature=0.7)
 
@@ -157,7 +157,7 @@ After running the thought process, you can access the `final_thought` attribute 
 
 
 ```python
-from ategpt import ThoughtProcess
+from ategpt.ategpt import ThoughtProcess
 
 thought_process = ThoughtProcess(temperature=0.7)
 
@@ -234,7 +234,7 @@ Here are two examples that showcase the flexibility of ATE-GPT.
 ATE-GPT is capable of thinking through complex problems and bringing in interdisciplinary thinking to accomplish the end goal.
 
 ```python
-from ategpt import ThoughtProcess
+from ategpt.ategpt import ThoughtProcess
 
 end_goal = "I need to know the best activities to do with my 9-month-old baby in his last wake-window of the day (3pm to 6pm)."
 
@@ -285,7 +285,7 @@ Remember, maintaining a consistent sequence of these activities can provide a se
 ATE-GPT can also quicklky identify when a question is simple and answer it simply.
 
 ```python
-from ategpt import ThoughtProcess
+from ategpt.ategpt import ThoughtProcess
 
 end_goal = "What is (5 * 5) - 30?"
 
